@@ -1,9 +1,5 @@
-user_list = list(input("Введіть список чисел: "))
-def find_max(numbers):
-  if len(numbers) == 1:
-    return numbers[0]
-  else:
-    max = find_max(numbers[1:])
-    return numbers[0] if numbers[0] > max else max
+fruits = ['apple', 'banana', 'cherry']
 
-print("Найбільше число:", find_max(user_list))
+x = fruits.pop(1) 
+print(x)
+print(fruits)
