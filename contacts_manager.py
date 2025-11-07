@@ -28,7 +28,7 @@ while True:
             if x == name:
                 print("Знайдено:", x,":", y)
                 break;
-            else:
+        else:
                 print("Не знайдено!")
     
     elif choice == "3":
