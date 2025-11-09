@@ -1,0 +1,3 @@
+"Country: Republic of Latvia\nCapital: Riga\nPopulation: 1829000\nArea: 64559.0\nCurrency: Euro"
+"Country: Ukraine\nCapital: Kyiv\nPopulation: 32862000\nArea: 603550.0\nCurrency: Ukrainian hryvnia"
+"Country: Commonwealth of Australia\nCapital: Canberra\nPopulation: 27536874\nArea: 7692024.0\nCurrency: Australian dollar"
