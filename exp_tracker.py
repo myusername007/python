@@ -27,7 +27,11 @@ while True:
         elif choice == "1":
             date = input("Введіть дату витрати: ")
             category = input("Введіть категорію витрати: ")
-            amount = input("Введіть суму витрати: ")
+            try:
+                amount = input("Введіть суму витрати: ")
+            except ValueError:
+                print("Неправильний формат суми!")
+                continue
             new_expense = [date, category, amount]
             expense.append(new_expense)
             with open (path, "a", encoding="utf-8") as f:
@@ -41,7 +45,7 @@ while True:
                         expenses = json.loads(line)
                         print(expenses)
                     except:
-                        print("FileNotFoundError")
+                        continue
 
         elif choice == "3":
             total = 0
@@ -58,4 +62,3 @@ while True:
             with open (path, "w", encoding = "utf-8") as f:
                 json.dump(expense, f)
 
-                
