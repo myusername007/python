@@ -1,4 +1,7 @@
 from .task import Task
+import json
+
+
 
 class TaskStore:
     def __init__(self):
@@ -26,3 +29,22 @@ class TaskStore:
                 t.priority = new_priority
                 break
     
+    def save_to_file(self, filename):
+        try: 
+            with open(filename, 'w', encoding='utf-8') as f:
+                json.dump([t.to_dict() for t in self.tasks], f, ensure_ascii=False, indent=4)
+                f.write('\n')
+        except FileNotFoundError:
+            print("Помилка завантаження файлу.")
+
+    def load_from_file(self, filename):
+        try:
+            with open(filename, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+                self.tasks = [Task.from_dict(d) for d in data]
+        except FileNotFoundError:
+            print("Файл не знайдено. Починаємо з порожнього списку задач.")
+        except json.JSONDecodeError:
+            print("Помилка читання файлу. Починаємо з порожнього списку задач.")    
+
+        
