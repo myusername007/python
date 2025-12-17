@@ -1,7 +1,7 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, EmailStr
 
 class User(BaseModel):
     username: str 
-    email: str 
+    email: EmailStr
     age: int 
     sex: str 

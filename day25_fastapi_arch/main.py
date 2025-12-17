@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, status
 from models.user import User
 from services.user_service import create_user, list_users
 
@@ -8,6 +8,6 @@ app = FastAPI()
 def get_users():
     return list_users()
 
-@app.post("/users")
+@app.post("/users", status_code=status.HTTP_201_CREATED)
 def add_user(user: User):
     return create_user(user)
