@@ -1,4 +1,5 @@
-
+Day 1 - 15: 
+  ✔ Python basics completed previously. @done(25-12-17 19:13)
 Day 16:
   ✔ Python html parser + beautifulsoup4 study @started(25-12-07 18:25) @done(25-12-07 21:17) @lasted(2h52m5s)
 Day 17: 
@@ -16,3 +17,11 @@ Day 22:
   ✔  Python project structure, modules, packages study @started(25-12-13 19:22) @done(25-12-13 19:34) @lasted(12m45s)
 Day 23:
   ✔  Python basic User Management System (CLI) @started(25-12-14 18:26) @done(25-12-14 19:07) @lasted(41m43s)
+Day 24:
+  ✔  FastAPI introduction @started(25-12-15 21:33) @done(25-12-15 21:33) @lasted(29s)
+Day 25:
+  ✔  FastAPI architecture(services, models, storage) @started(25-12-16 19:26) @done(25-12-16 20:39) @lasted(1h13m41s)
+Day 26:
+  ✔  FastAPI validation, error handling, status codes @started(25-12-17 19:12) @done(25-12-17 19:42) @lasted(30m7s)
+Day 27: 
+  ✔  FastAPI Routers @started(25-12-18 17:00) @done(25-12-18 17:00) @lasted(4s)
