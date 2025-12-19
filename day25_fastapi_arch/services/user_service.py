@@ -1,4 +1,9 @@
-from storage.user_storage import add_user, get_all_users
+from storage.user_storage import (
+    add_user, 
+    get_all_users, 
+    get_user_by_id, 
+    delete_user
+)
 from fastapi import HTTPException, status
 
 def create_user(user):
@@ -18,3 +23,22 @@ def list_users():
             detail="No users found"
         )
     return get_all_users()
+
+def get_user(user_id: int):
+    user = get_user_by_id(user_id)
+    if not user:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="User not found"
+        )
+    return user
+
+def remove_user(user_id: int):
+     user = get_user_by_id(user_id)
+     if not user:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="User not found"
+            )
+     delete_user(user_id)
+
