@@ -15,3 +15,11 @@ def get_user_by_id(user_id: int):
 def delete_user(user_id: int):
     global _users
     _users = [u for u in _users if u.id != user_id]
+
+def update_user(user_id: int, data: dict):
+    for user in _users:
+        if user.id == user_id:
+            for key, value in data.items():
+                setattr(user, key, value)
+            return user
+    return None 

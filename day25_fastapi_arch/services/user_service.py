@@ -2,7 +2,8 @@ from storage.user_storage import (
     add_user, 
     get_all_users, 
     get_user_by_id, 
-    delete_user
+    delete_user,
+    update_user
 )
 from fastapi import HTTPException, status
 
@@ -42,3 +43,12 @@ def remove_user(user_id: int):
             )
      delete_user(user_id)
 
+def update_user_data(user_id: int, data: dict):
+    user = get_user_by_id(user_id)
+    if not user:
+        raise HTTPException (
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="User not found"
+        )
+    updated_user = update_user(user_id, data)
+    return updated_user

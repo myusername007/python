@@ -1,10 +1,11 @@
 from fastapi import APIRouter, status
-from models.user import User
+from models.user import User, UserUpdate
 from services.user_service import (
     create_user, 
     list_users, 
     get_user, 
-    remove_user
+    remove_user,
+    update_user_data
 )
 router = APIRouter(prefix="/users", tags=["users"])
 
@@ -23,3 +24,9 @@ def add_user(user: User):
 @router.delete("/{user_id}", status_code=status.HTTP_204_NO_CONTENT)
 def delete_user(user_id: int):
     remove_user(user_id)
+
+@router.patch("/{user_id}")
+def update_user(user_id: int, user_data: UserUpdate):
+    data = user_data.model_dump(exclude_unset=True)
+    return update_user_data(user_id, data)
+    
