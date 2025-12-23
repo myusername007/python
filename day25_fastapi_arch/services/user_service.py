@@ -52,3 +52,23 @@ def update_user_data(user_id: int, data: dict):
         )
     updated_user = update_user(user_id, data)
     return updated_user
+
+class UserService:
+    def __init__(self):
+        pass
+
+    def create_user(self, user):
+        add_user(user)
+        return user
+    
+    def list_users(self):
+        users = get_all_users()
+        if not users:
+            raise HTTPException(
+                status_code=status.HTTP_404_NOT_FOUND,
+                detail="No users found"
+            )
+        return users
+    
+def get_user_service():
+    return UserService()
