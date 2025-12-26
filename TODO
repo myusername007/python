@@ -27,3 +27,11 @@ Day 27:
   ✔  FastAPI Routers @started(25-12-18 17:00) @done(25-12-18 17:00) @lasted(4s)
 Day 28:
   ✔  FastAPI CRUD @started(25-12-19 19:37) @done(25-12-19 20:20) @lasted(43m48s)
+Day 29: 
+  ✔  FastAPI update: PUT vs PATCH @started(25-12-20 18:17) @done(25-12-22 21:22) @lasted(2d3h5m32s)
+Day 30:
+  ✔  FastAPI Dependency Injection @started(25-12-23 19:57) @done(25-12-23 21:01) @lasted(1h4m11s)
+Day 31:
+  ✔  Pytest + Dependency Injection @started(25-12-24 21:45) @done(25-12-25 21:00) @lasted(23h15m28s)
+Day 32:
+  ✔  Auth: basic authentication + API key @started(25-12-26 22:04) @done(25-12-26 22:14) @lasted(10m52s)
