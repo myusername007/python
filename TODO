@@ -37,4 +37,17 @@ Day 32:
   ✔  Auth: basic authentication + API key @started(25-12-26 22:04) @done(25-12-26 22:14) @lasted(10m52s)
 Day 33:
   ✔  FastAPI project practice @started(25-12-27 12:50) @done(25-12-27 18:40) @lasted(5h50m43s)
-  
+Day 34:
+  ✔  FastAPI JWT authentication @started(25-12-29 21:15) @done(25-12-29 22:01) @lasted(46m15s)
+Day 35:
+  ✔  FastAPI JWT studying @started(25-12-30 20:29) @done(25-12-30 21:03) @lasted(34m8s)
+Day 36:
+  ✔  FastAPI JWT with Depends @started(25-12-31 21:12) @done(25-12-31 21:29) @lasted(17m53s)
+Day 37:
+  ✔  PostgreSQL + SQLAlchemy study @started(26-01-01 19:51) @done(26-01-01 21:25) @lasted(1h34m17s)
+Day 38: 
+  ✔  FastAPI + SQLAlchemy + JWT @started(26-01-02 19:23) @done(26-01-02 22:21) @lasted(2h58m16s)
+Day 39:
+  ✔  FastAPI + SQLAlchemy CRUD @started(26-01-03 17:59) @done(26-01-03 19:58) @lasted(1h59m4s)
+Day 40:
+  ✔  FastAPI service layer + SQLAlchemy @started(26-01-04 13:02) @done(26-01-04 14:52) @lasted(1h50m25s)
