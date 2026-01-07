@@ -1,15 +1,19 @@
 from sqlalchemy.orm import Session
 from app.db.models import User
+from app.core.security import hash_password
 
 class UserService:
 
-    def create_user(self, db: Session, email: str) -> User:
-        user = User(email=email)
+    def create_user(self, db: Session, email: str, password: str) -> User:
+        user = User(
+            email=email,
+            hashed_password=hash_password(password)
+        )
         db.add(user)
         db.commit()
         db.refresh(user)
         return user
-    
+
     def get_all_users(self, db: Session) -> list[User]:
         return db.query(User).all()
     

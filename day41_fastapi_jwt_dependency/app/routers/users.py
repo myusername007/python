@@ -9,8 +9,11 @@ router = APIRouter()
 user_service = UserService()
 
 @router.get("/me")
-def read_me(current_user = Depends(get_current_user)):
-    return current_user
+def me(current_user = Depends(get_current_user)):
+    return {
+        "id": current_user.id,
+        "email": current_user.email
+    }
 
 @router.post("/", response_model=UserRead, status_code=status.HTTP_201_CREATED)
 def create_user(user: UserCreate, db: Session = Depends(get_db)):
@@ -20,7 +23,7 @@ def create_user(user: UserCreate, db: Session = Depends(get_db)):
             status_code=400,
             detail="Email already used!"
         )
-    return user_service.create_user(db, user.email)
+    return user_service.create_user(db, user.email, user.password)
 
 @router.get("/", response_model=list[UserRead], status_code=status.HTTP_200_OK)
 def get_users(db: Session = Depends(get_db), service: UserService = Depends(get_current_user)):
