@@ -8,7 +8,7 @@ from app.services.user_service import UserService
 router = APIRouter()
 user_service = UserService()
 
-@router.get("/me")
+@router.get("/me", response_model=UserRead, status_code=status.HTTP_200_OK)
 def me(current_user = Depends(get_current_user)):
     return {
         "id": current_user.id,
@@ -26,7 +26,7 @@ def create_user(user: UserCreate, db: Session = Depends(get_db)):
     return user_service.create_user(db, user.email, user.password)
 
 @router.get("/", response_model=list[UserRead], status_code=status.HTTP_200_OK)
-def get_users(db: Session = Depends(get_db), service: UserService = Depends(get_current_user)):
+def get_users(db: Session = Depends(get_db), current_user = Depends(get_current_user)):
     return user_service.get_all_users(db)
 
 @router.get("/{user_id}", response_model=UserRead)
@@ -48,5 +48,5 @@ def delete_user(user_id: int, db: Session = Depends(get_db)):
             detail="User not found"
         )
     user_service.delete_user(db, user)
-    return {"status": "deleted"}
+    return None
 
