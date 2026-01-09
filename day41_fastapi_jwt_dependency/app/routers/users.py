@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi import APIRouter, Depends, HTTPException, status, Query
 from sqlalchemy.orm import Session
 
 from app.schemas.user import UserCreate, UserRead
@@ -26,8 +26,18 @@ def create_user(user: UserCreate, db: Session = Depends(get_db)):
     return user_service.create_user(db, user.email, user.password)
 
 @router.get("/", response_model=list[UserRead], status_code=status.HTTP_200_OK)
-def get_users(db: Session = Depends(get_db), current_user = Depends(get_current_user)):
-    return user_service.get_all_users(db)
+def get_users(
+    limit: int = Query(10, ge=1, le=100),
+    offset: int = Query(0, ge=0),
+    email: str | None = Query(None),
+    db: Session = Depends(get_db)
+):
+    return user_service.get_all_users(
+        db=db,
+        limit=limit,
+        offset=offset,
+        email_contains=email
+        )
 
 @router.get("/{user_id}", response_model=UserRead)
 def get_user_by_id(user_id: int, db: Session = Depends(get_db)):

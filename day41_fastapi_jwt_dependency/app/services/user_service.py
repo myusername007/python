@@ -15,8 +15,20 @@ class UserService:
         db.refresh(user)
         return user
 
-    def get_all_users(self, db: Session) -> list[User]:
-        return db.query(User).all()
+    def get_all_users(
+            self, 
+            db: Session, 
+            limit: int = 10, 
+            offset: int = 0, 
+            email_contains: str | None = None
+        ) -> list[User]:
+
+        query =  db.query(User)
+
+        if email_contains:
+            query = query.filter(User.email.contains(email_contains))
+        
+        return query.offset(offset).limit(limit).all()
     
     def get_user_by_id(self, db: Session, user_id: int) -> Optional[User]:
         return db.query(User).filter(User.id == user_id).first()
