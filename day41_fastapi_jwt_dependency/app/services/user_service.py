@@ -1,4 +1,4 @@
-from sqlalchemy.orm import Session
+from sqlalchemy.orm import Session, joinedload
 from app.db.models import User
 from app.core.security import hash_password
 from typing import Optional
@@ -39,5 +39,12 @@ class UserService:
 
     def exists_by_email(self, db: Session, user_email: str) -> User:
         return db.query(User).filter(User.email == user_email).first()
+    
+    def get_user_with_posts(
+            self,
+            db: Session,
+            user_id: int
+    ):
+        return db.query(User).filter(User.id == user_id).options(joinedload(User.posts)).first()
 
 

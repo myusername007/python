@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends, HTTPException, status, Query
 from sqlalchemy.orm import Session
 
-from app.schemas.user import UserCreate, UserRead
+from app.schemas.user import UserCreate, UserRead, UserWithPosts
 from app.deps import get_db, get_current_user
 from app.services.user_service import UserService
 
@@ -60,3 +60,12 @@ def delete_user(user_id: int, db: Session = Depends(get_db)):
     user_service.delete_user(db, user)
     return None
 
+@router.get("/{user_id}/with-posts", response_model=UserWithPosts)
+def user_with_posts(user_id: int, db: Session = Depends(get_db)):
+    user = user_service.get_user_with_posts(db, user_id)
+    if not user:
+        raise HTTPException(
+            status_code=404,
+            detail="User not found"
+        )
+    return user
