@@ -60,6 +60,6 @@ def delete_post(
             status_code=403,
             detail="Forbidden"
         )
-    service.delete_post(db, post)
+    service.soft_delete_post(db, post)
     return None
         

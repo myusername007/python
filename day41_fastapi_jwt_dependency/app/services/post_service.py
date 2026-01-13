@@ -23,10 +23,10 @@ class PostService:
             db: Session,
             user_id: int
     ) -> list[Post]:
-        return db.query(Post).filter(Post.user_id == user_id).all()
+        return db.query(Post).filter(Post.user_id == user_id, Post.is_deleted ==False).all()
     
     def get_by_id(self, db: Session, post_id: int) -> Post | None:
-        return db.query(Post).filter(Post.id == post_id).first()
+        return db.query(Post).filter(Post.id == post_id, Post.is_deleted == False).first()
     
     def update_post(
             self,
@@ -39,10 +39,10 @@ class PostService:
         db.refresh(post)
         return post
     
-    def delete_post(
+    def soft_delete_post(
             self,
             db: Session,
             post: Post
     ) -> None:
-        db.delete(post)
+        post.is_deleted = True
         db.commit()

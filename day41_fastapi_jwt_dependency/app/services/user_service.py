@@ -28,23 +28,23 @@ class UserService:
         if email_contains:
             query = query.filter(User.email.contains(email_contains))
         
-        return query.offset(offset).limit(limit).all()
+        return query.filter(User.is_deleted == False).offset(offset).limit(limit).all()
     
     def get_user_by_id(self, db: Session, user_id: int) -> Optional[User]:
-        return db.query(User).filter(User.id == user_id).first()
+        return db.query(User).filter(User.id == user_id, User.is_deleted == False).first()
     
     def delete_user(self, db: Session, user: User) -> None:
-        db.delete(user) 
+        user.is_deleted = True
         db.commit()
 
     def exists_by_email(self, db: Session, user_email: str) -> User:
-        return db.query(User).filter(User.email == user_email).first()
+        return db.query(User).filter(User.email == user_email, User.is_deleted == False).first()
     
     def get_user_with_posts(
             self,
             db: Session,
             user_id: int
     ):
-        return db.query(User).filter(User.id == user_id).options(joinedload(User.posts)).first()
+        return db.query(User).filter(User.id == user_id, User.is_deleted == False).options(joinedload(User.posts)).first()
 
 
