@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi import APIRouter, Depends, HTTPException, status, Query
 from sqlalchemy.orm import Session
 
 from app.schemas.post import PostCreate, PostRead, PostUpdate
@@ -19,9 +19,10 @@ def create_post(
 @router.get("/me", response_model=list[PostRead])
 def my_posts(
     db: Session = Depends(get_db),
-    current_user = Depends(get_current_user)
+    current_user = Depends(get_current_user),
+    order: str = Query("desc", pattern="^(asc|desc)$")
 ):
-    return service.get_posts_by_user(db, current_user.id)
+    return service.get_posts_by_user(db, current_user.id, order)
 
 @router.put("/{post_id}", response_model=PostRead, status_code=status.HTTP_200_OK)
 def update_post(

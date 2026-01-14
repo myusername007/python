@@ -21,9 +21,16 @@ class PostService:
     def get_posts_by_user(
             self,
             db: Session,
-            user_id: int
+            user_id: int,
+            order: str = "desc"
     ) -> list[Post]:
-        return db.query(Post).filter(Post.user_id == user_id, Post.is_deleted ==False).all()
+        query = self._base_query(db).filter(Post.user_id == user_id)
+        if order == "asc":
+            query = query.order_by(Post.created_at.asc())
+        else:
+            query = query.order_by(Post.created_at.desc())
+        return query.all()
+    
     
     def get_by_id(self, db: Session, post_id: int) -> Post | None:
         return db.query(Post).filter(Post.id == post_id, Post.is_deleted == False).first()
@@ -46,3 +53,6 @@ class PostService:
     ) -> None:
         post.is_deleted = True
         db.commit()
+
+    def _base_query(self, db: Session):
+        return db.query(Post).filter(Post.is_deleted == False)
