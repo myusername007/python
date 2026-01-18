@@ -25,6 +25,7 @@ class PostService:
             order: str = "desc"
     ) -> list[Post]:
         query = self._base_query(db).filter(Post.user_id == user_id)
+    
         if order == "asc":
             query = query.order_by(Post.created_at.asc())
         else:
@@ -33,7 +34,7 @@ class PostService:
     
     
     def get_by_id(self, db: Session, post_id: int) -> Post | None:
-        return db.query(Post).filter(Post.id == post_id, Post.is_deleted == False).first()
+        return self._base_query(db).filter(Post.id == post_id).first()
     
     def update_post(
             self,
@@ -56,3 +57,4 @@ class PostService:
 
     def _base_query(self, db: Session):
         return db.query(Post).filter(Post.is_deleted == False)
+    
