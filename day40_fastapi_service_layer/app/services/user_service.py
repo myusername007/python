@@ -20,7 +20,7 @@ class UserService:
         db.delete(user) 
         db.commit()
 
-    def exists_by_email(self, db: Session, user_email: str) -> bool:
+    def exists_by_email(self, db: Session, user_email: str) -> User:
         return db.query(User).filter(User.email == user_email).first() is not None
 
 
