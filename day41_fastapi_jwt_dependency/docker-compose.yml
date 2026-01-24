@@ -1,5 +1,3 @@
-version: "3.9"
-
 services:
   db:
     image: postgres:15
@@ -12,7 +10,7 @@ services:
       - postgres_data:/var/lib/postgresql/data
     ports:
       - "5432:5432"
-
+  
   api:
     build: .
     ports:
@@ -21,7 +19,9 @@ services:
       - .env
     depends_on:
       - db
-
+    # ДОДАЙ ЦІ РЯДКИ:
+    volumes:
+      - .:/app  # Монтує весь проект в /app контейнера
+    
 volumes:
   postgres_data:
-

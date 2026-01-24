@@ -24,3 +24,4 @@ uvicorn==0.40.0
 pydantic-settings
 python-multipart
 psycopg[binary]
+alembic
