@@ -11,6 +11,7 @@ class User(Base):
     hashed_password = Column(String, nullable=False)
     is_deleted = Column(Boolean, default=False)
     created_at = Column(DateTime, default=datetime.utcnow)
+    is_active = Column(Boolean, default=True, nullable=False)
 
     posts = relationship("Post", back_populates="user")
     
