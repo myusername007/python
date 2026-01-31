@@ -77,3 +77,21 @@ Day 52:
   ✔  Basic pytest for FastAPI @started(26-01-19 20:56) @done(26-01-19 21:41) @lasted(45m43s)
 Day 53:
   ✔  config/env/settings management for FastAPI @started(26-01-20 20:13) @done(26-01-20 20:52) @lasted(39m24s)
+Day 54:
+  ✔  Docker basics study @started(26-01-21 21:09) @done(26-01-21 21:18) @lasted(9m48s)
+Day 55:
+  ✔  First Dockerfile for FastAPI app @started(26-01-21 21:19) @done(26-01-21 21:47) @lasted(28m31s)
+Day 56:
+  ✔  Docker Container first run @started(26-01-22 21:01) @done(26-01-22 21:27) @lasted(26m4s)
+Day 57:
+  ✔  .env in Docker @started(26-01-23 19:25) @done(26-01-23 19:46) @lasted(21m49s)
+Day 58:
+  ✔  PostgreSQL switch from SQLite basics @started(26-01-23 20:15) @done(26-01-23 20:57) @lasted(42m54s)
+Day 59:
+  ✔  PostgreSQL + FastAPI Docker-compose @started(26-01-23 21:01) @done(26-01-23 22:14) @lasted(1h13m36s)
+Day 60:
+  ✔  Alembic migrations basics study @started(26-01-24 19:13) @done(26-01-24 22:10) @lasted(2h57m19s)
+Day 61:
+  ✔  Alembic schema change with migration @started(26-01-30 20:43) @done(26-01-30 21:27) @lasted(44m44s)
+Day 62:
+  ✔  Alembic edge cases and rules @started(26-01-31 15:57) @done(26-01-31 16:23) @lasted(26m26s)
