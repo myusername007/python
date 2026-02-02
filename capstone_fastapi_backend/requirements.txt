@@ -8,3 +8,4 @@ python-multipart
 pydantic
 alembic
 pytest
+pydantic_settings
