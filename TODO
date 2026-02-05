@@ -95,3 +95,14 @@ Day 61:
   ✔  Alembic schema change with migration @started(26-01-30 20:43) @done(26-01-30 21:27) @lasted(44m44s)
 Day 62:
   ✔  Alembic edge cases and rules @started(26-01-31 15:57) @done(26-01-31 16:23) @lasted(26m26s)
+Day 63:
+  ✔  Capstone FastAPI project day 1: project structure setup @started(26-02-01 19:19) @done(26-02-01 20:46) @lasted(1h27m23s)
+Day 64:
+  ✔  Capstone FastAPI project day 2: models + DB + firts migration @started(26-02-02 18:49) @done(26-02-02 20:13) @lasted(1h24m31s)
+Day 65:
+  ✔  Capstone FastAPI project day 3: Schemas + DB dependency + connect routers @started(26-02-03 15:21) @done(26-02-03 15:47) @lasted(26m49s)
+Day 66:
+  ✔  Capstone FastAPI project day 4: Auth + User flow @started(26-02-04 19:07) @done(26-02-04 22:07) @lasted(3h9s)
+Day 67: 
+  ✔  New capstone task automation backend day 1 structure + db + docker @started(26-02-05 16:16) @done(26-02-05 16:51) @lasted(35m35s)
+
