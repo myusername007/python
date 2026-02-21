@@ -105,4 +105,36 @@ Day 66:
   ✔  Capstone FastAPI project day 4: Auth + User flow @started(26-02-04 19:07) @done(26-02-04 22:07) @lasted(3h9s)
 Day 67: 
   ✔  New capstone task automation backend day 1 structure + db + docker @started(26-02-05 16:16) @done(26-02-05 16:51) @lasted(35m35s)
+Day 68:
+  ✔  New Capstone: task automation backend. Day 2 - models + first migration @started(26-02-06 18:16) @done(26-02-06 19:32) @lasted(1h16m40s)
+Day 69:
+  ✔  New Capstone: task automation backend. Day 3 - Pydantic schemas + get_db + basic endpoints @started(26-02-07 18:34) @done(26-02-07 19:07) @lasted(33m58s)
+Day 70:
+  ✔  New Capstone: task automation backend. Day 4 - Security + auth(register/login/JWT) @started(26-02-08 18:52) @done(26-02-08 20:23) @lasted(1h31m25s)
+Day 71:
+  ✔  New Capstone: task automation backend. Day 5 - Tasks CRUD @started(26-02-09 21:46) @done(26-02-09 21:58) @lasted(12m4s)
+Day 72:
+  ✔  Day 6 - Background processing + runs history @started(26-02-10 12:25) @done(26-02-10 14:38) @lasted(2h13m5s)
+  ✔  Handling task status error @started(26-02-10 18:33) @done(26-02-10 20:33) @lasted(2h36s)
+Day 73:
+  ✔  Day 7 - idempotency + lock/double-start protection @started(26-02-11 19:36) @done(26-02-11 20:40) @lasted(1h4m52s)
+Day 74:
+  ✔  Day 8 - Admin layer @started(26-02-12 14:31) @done(26-02-12 15:22) @lasted(51m17s)
+Day 75:
+  ✔  Day 9 - Pagination + Filters + Sorting (Production Layer) @started(26-02-13 19:27) @done(26-02-13 21:18) @lasted(1h51m12s)
+Day 76:
+  ✔  Day 10 - Production polish + readme + final results @started(26-02-14 19:44) @done(26-02-14 21:03) @lasted(1h19m36s)
 
+  Backend Hardening — Phase 1: Testing
+Day 77:
+  ✔ Pytest introduction + first API tests @started(26-02-15 21:17) @done(26-02-15 22:20) @lasted(1h3m11s)
+Day 78:
+  ✔ Pytest - roles and permissions tests @started(26-02-16 20:41) @done(26-02-16 21:33) @lasted(52m38s)
+Day 79:
+  ✔ Pytest - user tasks access tests @started(26-02-17 14:11) @done(26-02-17 15:36) @lasted(1h25m30s)
+Day 80:
+  ✔ Pytest - helpers and parametrize @started(26-02-18 19:11) @done(26-02-18 19:51) @lasted(40m58s)
+Day 81:
+  ✔ Pytest - background task testing @started(26-02-19 12:20) @done(26-02-19 14:07) @lasted(1h47m45s)
+Day 82:
+  ✔ Pytest - DB factory for background runner injection @started(26-02-20 21:42) @done(26-02-20 22:09) @lasted(27m39s)
