@@ -138,3 +138,9 @@ Day 81:
   ✔ Pytest - background task testing @started(26-02-19 12:20) @done(26-02-19 14:07) @lasted(1h47m45s)
 Day 82:
   ✔ Pytest - DB factory for background runner injection @started(26-02-20 21:42) @done(26-02-20 22:09) @lasted(27m39s)
+
+...
+Day 101:
+  ✔ AI Agents: basic tool use in Claude @started(26-03-13 22:57) @done(26-03-13 23:08) @lasted(11m55s)
+Day 102:
+  ✔ AI Agent with several tools @started(26-03-14 20:24) @done(26-03-14 21:27) @lasted(1h3m5s)
